@@ -1,4 +1,4 @@
-package in.androidmate.rxjava.Api;
+package in.androidmate.rxjava.Network;
 
 import in.androidmate.rxjava.WeatherData;
 import retrofit2.http.GET;
@@ -9,7 +9,7 @@ import rx.Observable;
  * Created by anujgupta on 27/07/17.
  */
 
-public interface ApiInterface {
+public interface NetworkStore {
 
     @GET("weather")
     Observable<WeatherData> fetchCurrentWeather(@Query("q") String q,

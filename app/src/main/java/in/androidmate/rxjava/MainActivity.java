@@ -6,22 +6,13 @@ import android.util.Log;
 import android.widget.TextView;
 
 
-import com.google.gson.Gson;
-
-import java.io.IOException;
-import java.util.Map;
-
-import in.androidmate.rxjava.Api.ApiInterface;
-import in.androidmate.rxjava.Api.RestAdapter;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import in.androidmate.rxjava.Network.NetworkCallback;
+import in.androidmate.rxjava.Network.NetworkStore;
+import in.androidmate.rxjava.Network.NetworkClient;
 import rx.Observable;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func0;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
@@ -39,31 +30,30 @@ public class MainActivity extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.tv);
 
-        Observable<WeatherData> fetchCurrentWeather = RestAdapter.getRetrofit(this)
-                .create(ApiInterface.class)
+        Observable<WeatherData> fetchCurrentWeather = NetworkClient.getRetrofit(this)
+                .create(NetworkStore.class)
                 .fetchCurrentWeather("London,uk","b1b15e88fa797225412429c1c50c122a1")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
 
-        Subscriber<WeatherData> subscriber = new Subscriber<WeatherData>() {
+
+        subscription = fetchCurrentWeather.subscribe(new NetworkCallback<WeatherData>() {
             @Override
-            public void onCompleted() {
-                Log.d(TAG,"Completed");
+            public void onSuccess(WeatherData model) {
+                Log.d(TAG,"Success");
+                tv.setText(model.getName());
             }
 
             @Override
-            public void onError(Throwable e) {
-                Log.d(TAG,"Error");
+            public void onFailure(String message) {
+                Log.d(TAG,"Failure");
             }
 
             @Override
-            public void onNext(WeatherData weatherData) {
-                Log.d(TAG,"Next");
-                tv.setText(weatherData.getName());
+            public void onFinish() {
+                Log.d(TAG,"Finish");
             }
-        };
-
-        subscription = fetchCurrentWeather.subscribe(subscriber);
+        });
     }
 
     @Override

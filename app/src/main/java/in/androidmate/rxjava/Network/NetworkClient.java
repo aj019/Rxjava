@@ -1,4 +1,4 @@
-package in.androidmate.rxjava.Api;
+package in.androidmate.rxjava.Network;
 
 import android.content.Context;
 
@@ -14,11 +14,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by anujgupta on 27/07/17.
  */
 
-public class RestAdapter {
+public class NetworkClient {
 
     private static Retrofit retrofit;
 
-    public RestAdapter(final Context context) {
+    public NetworkClient(final Context context) {
         final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -43,7 +43,7 @@ public class RestAdapter {
 
     public static Retrofit getRetrofit(Context context) {
         if(retrofit==null){
-            return retrofit=new RestAdapter(context).getRetrofit();
+            return retrofit=new NetworkClient(context).getRetrofit();
         }else{
             return retrofit;
         }
