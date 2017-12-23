@@ -1,4 +1,4 @@
-package in.androidmate.rxjava.Operators;
+package in.androidmate.rxjava.ui.Operators;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
