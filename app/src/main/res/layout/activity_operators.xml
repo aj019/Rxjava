@@ -91,5 +91,61 @@
         android:onClick="startIntervalExample"
         />
 
+    <Button
+        android:id="@+id/btReduceExample"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Reduce Operator Example"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btIntervalExample"
+        android:onClick="startReduceExample"
+        />
+
+    <Button
+        android:id="@+id/btBufferExample"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Buffer Operator Example"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btReduceExample"
+        android:onClick="startBufferExample"
+        />
+
+    <Button
+        android:id="@+id/btFilterExample"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Filter Operator Example"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btReduceExample"
+        android:onClick="startFilterExample"
+        />
+
+    <Button
+        android:id="@+id/btScanExample"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Scan Operator Example"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btReduceExample"
+        android:onClick="startScanExample"
+        />
+
 
 </android.support.constraint.ConstraintLayout>

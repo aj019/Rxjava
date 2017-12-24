@@ -24,7 +24,10 @@
         <activity android:name=".ui.Operators.ZipExampleActivity" />
         <activity android:name=".ui.Operators.TakeExampleActivity" />
         <activity android:name=".ui.Operators.TimerExampleActivity" />
-        <activity android:name=".ui.Operators.IntervalExampleActivity"></activity>
+        <activity android:name=".ui.Operators.IntervalExampleActivity" />
+        <activity android:name=".ui.Operators.ReduceExampleActivity" />
+        <activity android:name=".ui.Operators.BufferExampleActivity" />
+        <activity android:name=".ui.Operators.FilterExampleActivity"></activity>
     </application>
 
 </manifest>
