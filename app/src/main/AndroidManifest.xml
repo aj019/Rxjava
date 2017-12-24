@@ -22,7 +22,8 @@
         <activity android:name=".ui.Operators.SimpleExampleActivity" />
         <activity android:name=".ui.Operators.MapExampleActivity" />
         <activity android:name=".ui.Operators.ZipExampleActivity" />
-        <activity android:name=".ui.Operators.TakeExampleActivity"></activity>
+        <activity android:name=".ui.Operators.TakeExampleActivity" />
+        <activity android:name=".ui.Operators.TimerExampleActivity"></activity>
     </application>
 
 </manifest>

@@ -63,5 +63,19 @@
         android:onClick="startTakeExample"
         />
 
+    <Button
+        android:id="@+id/btTimerExample"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Timer Operator Example"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btTakeExample"
+        android:onClick="startTimerExample"
+        />
+
 
 </android.support.constraint.ConstraintLayout>

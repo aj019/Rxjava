@@ -12,6 +12,7 @@ import in.androidmate.rxjava.R;
 import in.androidmate.rxjava.ui.Operators.MapExampleActivity;
 import in.androidmate.rxjava.ui.Operators.SimpleExampleActivity;
 import in.androidmate.rxjava.ui.Operators.TakeExampleActivity;
+import in.androidmate.rxjava.ui.Operators.TimerExampleActivity;
 import in.androidmate.rxjava.ui.Operators.ZipExampleActivity;
 
 public class OperatorsActivity extends AppCompatActivity {
@@ -27,6 +28,9 @@ public class OperatorsActivity extends AppCompatActivity {
 
     @BindView(R.id.btTakeExample)
     Button btTakeExample;
+
+    @BindView(R.id.btTimerExample)
+    Button btTimerExample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,12 @@ public class OperatorsActivity extends AppCompatActivity {
     public void startTakeExample(){
 
         startExample(TakeExampleActivity.class);
+    }
+
+    @OnClick(R.id.btTimerExample)
+    public void startTimerExample(){
+
+        startExample(TimerExampleActivity.class);
     }
 
     private void startExample(Class<?> activity){
