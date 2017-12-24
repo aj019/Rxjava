@@ -11,6 +11,7 @@ import butterknife.OnClick;
 import in.androidmate.rxjava.R;
 import in.androidmate.rxjava.ui.Operators.MapExampleActivity;
 import in.androidmate.rxjava.ui.Operators.SimpleExampleActivity;
+import in.androidmate.rxjava.ui.Operators.ZipExampleActivity;
 
 public class OperatorsActivity extends AppCompatActivity {
 
@@ -19,6 +20,9 @@ public class OperatorsActivity extends AppCompatActivity {
 
     @BindView(R.id.btMapExample)
     Button btMapExample;
+
+    @BindView(R.id.btZipOperator)
+    Button btZipExample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,12 @@ public class OperatorsActivity extends AppCompatActivity {
     public void startMapExample(){
 
         startExample(MapExampleActivity.class);
+    }
+
+    @OnClick(R.id.btZipOperator)
+    public void startZipExample(){
+
+        startExample(ZipExampleActivity.class);
     }
 
     private void startExample(Class<?> activity){

@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".ui.OperatorsActivity" />
         <activity android:name=".ui.Operators.SimpleExampleActivity" />
-        <activity android:name=".ui.Operators.MapExampleActivity"></activity>
+        <activity android:name=".ui.Operators.MapExampleActivity" />
+        <activity android:name=".ui.Operators.ZipExampleActivity"></activity>
     </application>
 
 </manifest>
