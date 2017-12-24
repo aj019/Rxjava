@@ -9,6 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import in.androidmate.rxjava.R;
+import in.androidmate.rxjava.ui.Operators.IntervalExampleActivity;
 import in.androidmate.rxjava.ui.Operators.MapExampleActivity;
 import in.androidmate.rxjava.ui.Operators.SimpleExampleActivity;
 import in.androidmate.rxjava.ui.Operators.TakeExampleActivity;
@@ -67,6 +68,12 @@ public class OperatorsActivity extends AppCompatActivity {
     public void startTimerExample(){
 
         startExample(TimerExampleActivity.class);
+    }
+
+    @OnClick(R.id.btIntervalExample)
+    public void startIntervalExample(){
+
+        startExample(IntervalExampleActivity.class);
     }
 
     private void startExample(Class<?> activity){
