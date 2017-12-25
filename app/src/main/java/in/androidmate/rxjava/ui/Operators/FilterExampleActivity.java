@@ -13,6 +13,7 @@ import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 public class FilterExampleActivity extends AppCompatActivity {
@@ -35,26 +36,32 @@ public class FilterExampleActivity extends AppCompatActivity {
 
         getObservable()
                 .subscribeOn(Schedulers.io())
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer i) throws Exception {
+                        return i%2 == 0;
+                    }
+                })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(getObserver());
 
     }
 
-    private Observable<String> getObservable(){
-        return Observable.just("Cricket","Soccer");
+    private Observable<Integer> getObservable(){
+        return Observable.just(1,2,3,4,5,6);
 
     }
 
 
-    private Observer<String> getObserver(){
-        return  new Observer<String>(){
+    private Observer<Integer> getObserver(){
+        return  new Observer<Integer>(){
             @Override
             public void onSubscribe(Disposable d) {
                 tvResult.append("Subscribed \n");
             }
 
             @Override
-            public void onNext(String value) {
+            public void onNext(Integer value) {
                 tvResult.append("Value : "+ value +"\n");
             }
 
