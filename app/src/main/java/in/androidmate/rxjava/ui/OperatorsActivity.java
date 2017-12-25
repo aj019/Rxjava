@@ -9,6 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import in.androidmate.rxjava.R;
+import in.androidmate.rxjava.ui.Operators.BufferExampleActivity;
 import in.androidmate.rxjava.ui.Operators.IntervalExampleActivity;
 import in.androidmate.rxjava.ui.Operators.MapExampleActivity;
 import in.androidmate.rxjava.ui.Operators.ReduceExampleActivity;
@@ -81,6 +82,12 @@ public class OperatorsActivity extends AppCompatActivity {
     public void startReduceExample(){
 
         startExample(ReduceExampleActivity.class);
+    }
+
+    @OnClick(R.id.btBufferExample)
+    public void startScanExample(){
+
+        startExample(BufferExampleActivity.class);
     }
 
     private void startExample(Class<?> activity){
